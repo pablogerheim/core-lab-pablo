@@ -1,0 +1,38 @@
+
+description
+price
+
+cor -> selec 
+options 
+branco
+preto
+cinza
+vermelho
+azul
+verde
+laranja
+amarelo
+marron
+rosa
+roxo
+
+!!! tirar clg Filter linha 22
+!!! tirar clg HelperF linha 19
+Mudar o Add para form de formulario 
+
+            body:  {
+                "name": name,
+                "description": description,
+                "plate": plate,
+                "year": year,
+                "color": "azul",
+                "price": price
+            }
+
+           JSON.stringify({ name, color, description, year, plate, price })
+
+                       headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Credentials": "true"
+            },

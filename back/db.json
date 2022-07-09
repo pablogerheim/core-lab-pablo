@@ -1,0 +1,82 @@
+{
+  "nextId": 9,
+  "vehicles": [
+    {
+      "id": 1,
+      "name": "First Car",
+      "description": "Description of Second Car",
+      "plate": "MOD-2341",
+      "isFavorite": true,
+      "year": 2020,
+      "color": "azul",
+      "price": 87000,
+      "createdAt": "2022-07-08T00:04:26.605Z"
+    },
+    {
+      "id": 2,
+      "name": "Second Car",
+      "description": "Description of Second Car",
+      "plate": "MOD-2341",
+      "isFavorite": true,
+      "year": 2020,
+      "color": "azul",
+      "price": 87000,
+      "createdAt": "2022-07-08T00:04:35.348Z"
+    },
+    {
+      "id": 3,
+      "name": "X Car",
+      "description": "Description of Second Car",
+      "plate": "MOD-2341",
+      "isFavorite": false,
+      "year": 2020,
+      "color": "azul",
+      "price": 87000,
+      "createdAt": "2022-07-08T00:04:52.365Z"
+    },
+    {
+      "id": 4,
+      "name": "X Car y",
+      "description": "Description of Second Car",
+      "plate": "MOD-2341",
+      "isFavorite": false,
+      "year": 2020,
+      "color": "azul",
+      "price": 87000,
+      "createdAt": "2022-07-09T00:13:01.725Z"
+    },
+    {
+      "id": 5,
+      "name": "X Car yt",
+      "description": "Description of Second Car",
+      "plate": "MOD-2341",
+      "isFavorite": false,
+      "year": 2020,
+      "color": "azul",
+      "price": 87000,
+      "createdAt": "2022-07-09T00:14:31.790Z"
+    },
+    {
+      "id": 6,
+      "name": "qwe",
+      "description": "qwew",
+      "plate": "1231asd",
+      "isFavorite": false,
+      "year": 2022,
+      "color": "preto",
+      "price": 44444,
+      "createdAt": "2022-07-09T00:34:33.902Z"
+    },
+    {
+      "id": 8,
+      "name": "X Car yt",
+      "description": "Description of Second Car",
+      "plate": "MOD-2341",
+      "isFavorite": false,
+      "year": 2020,
+      "color": "azul",
+      "price": 8700,
+      "createdAt": "2022-07-09T00:35:17.946Z"
+    }
+  ]
+}
