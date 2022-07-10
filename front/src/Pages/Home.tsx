@@ -1,22 +1,36 @@
-import { useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { IVehicle } from '../../Types/Vehicle';
 import Card from '../componentes/Card';
-import { api } from '../Helper/HelperFunction';
+
 const imagen = "https://t3.ftcdn.net/jpg/03/20/78/84/240_F_320788475_nEiLVViOBewea7taZWqNUR0lJAMTAaSo.jpg"
 
-function Home() {
-    const [cards, setCards] = useState<IVehicle[] | []>([])
-    
-    async function getData() {
-        const dados = await api.get<IVehicle[]>("/")
-        if (dados.data) {
-            setCards(dados.data)
-        }
+interface props {
+    cards: IVehicle[] | []
+    setCards: Function
+}
+
+function Home({ cards, setCards }: props) {
+
+
+    function handleSearch(search: string) {
+        let ativado = false
+        let found = cards.map((card) => {
+
+            Object.values(card).map(text => {
+                if (text.toString().includes(search)) {
+                    ativado = true
+                }
+            }
+            )
+            if (ativado) {
+                ativado = false
+                return card
+            }
+        })
+        let result: IVehicle[] = []
+        found.forEach(card => { if (card) { result.push(card) } })
+        setCards(result)
     }
-    useEffect(() => {
-        getData()
-    }, [])
     
     function favorite(card: IVehicle) {
         if (card.isFavorite) {
@@ -26,7 +40,7 @@ function Home() {
 
     function myAds(card: IVehicle) {
         if (!card.isFavorite) {
-            return (<Card card={card} onChangeCards={setCards}/>)
+            return (<Card card={card} onChangeCards={setCards} />)
         }
     }
 
@@ -38,11 +52,14 @@ function Home() {
                     <input
                         className="bg-green-200 text-lg font-medium"
                         placeholder="Buscar"
+                        onChange={e => handleSearch(e.target.value)}
                     />
                 </div>
-                <button className="h-12 w-12 ">
-                    <a href='/filter'><img src={imagen} /></a>
-                </button>
+                <a href='/filter'>
+                    <button type='button' className="h-12 w-12 ">
+                        <img src={imagen} alt={'tools'} />
+                    </button>
+                </a>
             </div>
             <div className="flex justify-center mt-8">
                 <a href='/create' className="flex items-center w-full border rounded-3xl bg-green-300">

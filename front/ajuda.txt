@@ -16,8 +16,8 @@ marron
 rosa
 roxo
 
-!!! tirar clg Filter linha 22
-!!! tirar clg HelperF linha 19
+terminar FIlters
+ 
 Mudar o Add para form de formulario 
 
             body:  {
@@ -36,3 +36,18 @@ Mudar o Add para form de formulario
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Credentials": "true"
             },
+
+                function selec(text:string) {
+        let helperArr:string[] =[]
+       
+        Object.entries(filters).forEach((arr) => {arr[0]===text? helperArr = arr[1] : console.log()})
+
+        return(
+            <label className="w-full" key={text}> 
+            <p className="pl-8">{upFirstLetter(text)}:</p>
+                <select className="p-2 pl-8 font-medium w-full border rounded-3xl border-black" >
+                    {helperArr.map((e: string, i) => <option key={v4()} >{e}</option>)}        
+                </select>
+            </label>
+        )
+    }
