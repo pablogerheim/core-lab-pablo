@@ -40,8 +40,9 @@ function Card({
 
     if (id !== 0) { return <Add id={id} setId={setId} onChangeCards={onChangeCards} /> }
     else {
+
         return (
-        <div key={v4()} className={`h-56 w-60 opacity-75 bg-[${helperColor(card.color)}] m-4`}>
+        <div key={v4()} className={`h-56 w-60 opacity-75 ${helperColor(card.color)} m-4`}>
             <section className="flex p-2 justify-end gap-2">
                 <button title="update" type="button" onClick={() => handleUpdate(card.id)} ><AiOutlineForm className="h-7 w-7" /></button>
                 <button title="delete" type="button" onClick={() => handleDelet(card.id)}><AiOutlineClose className="h-7 w-7" /></button>

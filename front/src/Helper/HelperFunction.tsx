@@ -21,6 +21,10 @@ function helperColor(color: string) {
     Object.entries(COLORS).forEach((arr) => { if (arr[0] === color) { selectedColor = arr[1] } })
     return selectedColor
 }
+
+
+
+
 const api = axios.create({
   baseURL: "http://localhost:3001",
 });

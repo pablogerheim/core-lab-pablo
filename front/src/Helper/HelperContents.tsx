@@ -1,17 +1,17 @@
 const CAR_INFO = ["nome", "cor", "descrição", "ano", "placa", "preço"]
 const CAR_FILTER = ["marca", "cor", "ano"]
 const COLORS = {
-    "branco": "#ffffff",
-    "preto": "#000000",
-    "cinza": "#6e6e6e",
-    "vermelho": "#e32b31",
-    "azul": "#3252dc",
-    "verde": "#52bc49",
-    "laranja": "#e1a041",
-    "amarelo": "#ebe833",
-    "marron": "#914708",
-    "rosa": "#d959e8",
-    "roxo": "#761940",
+    "branco": "bg-white",
+    "preto": "bg-black",
+    "cinza": "bg-gray-500",
+    "vermelho": "bg-red-500",
+    "azul": "bg-blue-500",
+    "verde": "bg-green-500",
+    "laranja": "bg-orange-500",
+    "amarelo": "bg-yellow-500",
+    "marron": "bg-amber-900",
+    "rosa": "bg-pink-500",
+    "roxo": "bg-purple-500",
 }
 
 const mok = [{

@@ -1,54 +1,27 @@
 {
-  "nextId": 35,
+  "nextId": 3,
   "vehicles": [
     {
       "id": 1,
-      "name": "First Car",
-      "description": "Description of Second Car",
-      "plate": "MOD-2341",
-      "isFavorite": true,
-      "year": 2020,
-      "color": "azul",
-      "price": 87000,
-      "createdAt": "2022-07-08T00:04:26.605Z"
+      "name": "wessss",
+      "description": "a",
+      "plate": "a",
+      "isFavorite": false,
+      "year": null,
+      "color": "marron",
+      "price": null,
+      "createdAt": "2022-07-11T00:49:15.376Z"
     },
     {
       "id": 2,
-      "name": "Second Car",
-      "description": "Description of Second Car",
-      "plate": "MOD-2341",
-      "isFavorite": true,
-      "year": 2020,
-      "color": "azul",
-      "price": 87000,
-      "createdAt": "2022-07-08T00:04:35.348Z"
-    },
-    {
-      "name": "X Car yrx",
-      "description": "Description of Second Car",
-      "plate": "MOD-2341",
-      "year": 2024,
-      "color": "azul",
-      "price": 87000
-    },
-    {
-      "name": "ttttttttt",
-      "description": "qwew",
-      "plate": "1231asd",
-      "year": 2022,
-      "color": "brnaco",
-      "price": 888888
-    },
-    {
-      "id": 34,
-      "name": "qqead",
-      "description": "dcvd",
-      "plate": "a",
+      "name": "q",
+      "description": "w",
+      "plate": "d",
       "isFavorite": false,
-      "year": 5,
-      "color": "marron",
-      "price": 6,
-      "createdAt": "2022-07-10T15:05:22.241Z"
+      "year": null,
+      "color": "roxo",
+      "price": null,
+      "createdAt": "2022-07-11T00:51:57.809Z"
     }
   ]
 }
