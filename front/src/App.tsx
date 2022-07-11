@@ -13,7 +13,7 @@ function App(): JSX.Element {
 
     async function getData() {
         const dados = await api.get<IVehicle[]>("/")
-        if (dados.data) {
+        if (dados.data && dados.data !== cards) {
             setCards(dados.data)
         }
     }

@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-import { api, helperSelect } from "../Helper/HelperFunction";
-import { IselectObj, IVehicle } from "../../Types/Vehicle";
+import { IVehicle } from "../../Types/Vehicle";
 import FilterFild from '../componentes/FilterFild';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,16 +13,16 @@ function Filter({ cards, setCards }: props) {
     const navegate = useNavigate()
 
     const [name, setName] = useState<string>('')
-    const [color, setColor] = useState<string>('brnaco')
+    const [color, setColor] = useState<string>('')
     const [year, setYear] = useState<string>('')
 
     function handleFilters() {
         let filterName: IVehicle[] = name ? [] : cards
-        if (name) { cards.forEach((obj: IVehicle) => { if (obj.name === name) { filterName.push(obj) } }) }
+        if (name !== 'selecione --') { cards.forEach((obj: IVehicle) => { if (obj.name === name) { filterName.push(obj) } }) }
         let filterColor: IVehicle[] = color ? [] : filterName
-        if (color) { filterName.forEach((obj: IVehicle) => { if (obj.color === color) { filterColor.push(obj) } }) }
+        if (color !== 'selecione --') { filterName.forEach((obj: IVehicle) => { if (obj.color === color) { filterColor.push(obj) } }) }
         let filterYear: IVehicle[] = year ? [] : filterColor
-        if (year) { filterColor.forEach((obj: IVehicle) => { if (obj.year === parseInt(year)) { filterYear.push(obj) } }) }
+        if (year !== 'selecione --') { filterColor.forEach((obj: IVehicle) => { if (obj.year === parseInt(year)) { filterYear.push(obj) } }) }
         setCards(filterYear)
         navegate('/')
     }

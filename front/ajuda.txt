@@ -51,3 +51,4 @@ Mudar o Add para form de formulario
             </label>
         )
     }
+    defaultValue={color === key ? true : false} 

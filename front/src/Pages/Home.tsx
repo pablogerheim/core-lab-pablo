@@ -1,8 +1,12 @@
+import { clearConfigCache } from 'prettier';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { v4 } from 'uuid';
 import { IVehicle } from '../../Types/Vehicle';
 import Card from '../componentes/Card';
+import { FILTER_BY, imagen } from '../Helper/HelperContents';
+import { api } from '../Helper/HelperFunction';
 
-const imagen = "https://t3.ftcdn.net/jpg/03/20/78/84/240_F_320788475_nEiLVViOBewea7taZWqNUR0lJAMTAaSo.jpg"
+
 
 interface props {
     cards: IVehicle[] | []
@@ -11,17 +15,19 @@ interface props {
 
 function Home({ cards, setCards }: props) {
 
-
-    function handleSearch(search: string) {
+    async function handleSearch(search: string) {
+        const dados = await api.get<IVehicle[]>("/")
+        console.log(search)
         let ativado = false
-        let found = cards.map((card) => {
+        let found = dados.data.map((card) => {
+            console.log(card)
+            Object.entries(card).forEach(arr => {
+                if (FILTER_BY.includes(arr[0])) {
+                    console.log(arr)
 
-            Object.values(card).map(text => {
-                if (text.toString().includes(search)) {
-                    ativado = true
+                    if (arr[1].toString().includes(search)) { ativado = true }
                 }
-            }
-            )
+            })
             if (ativado) {
                 ativado = false
                 return card
@@ -34,13 +40,13 @@ function Home({ cards, setCards }: props) {
 
     function favorite(card: IVehicle) {
         if (card.isFavorite) {
-            return (<Card card={card} setCards={setCards} />)
+            return (<Card key={v4()} card={card} setCards={setCards} />)
         }
     }
 
     function myAds(card: IVehicle) {
         if (!card.isFavorite) {
-            return (<Card card={card} setCards={setCards} />)
+            return (<Card key={v4()} card={card} setCards={setCards} />)
         }
     }
 
@@ -52,7 +58,7 @@ function Home({ cards, setCards }: props) {
                     <input
                         className="bg-green-200 text-lg font-medium"
                         placeholder="Buscar"
-                        onChange={e => handleSearch(e.target.value)}
+                        onChange={(e) => handleSearch(e.target.value)}
                     />
                 </div>
                 <a href='/filter'>
@@ -67,12 +73,12 @@ function Home({ cards, setCards }: props) {
                     <p>ADICIONAR</p>
                 </a>
             </div>
-            <div className='p-8 flex items-center flex-col '>
-                <strong className='flex self-start'>Favoritos</strong>
+                <strong className='flex self-start mt-4'>Favoritos</strong>
+            <div className='p-8 flex items-center flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
                 {cards.map(card => favorite(card))}
             </div>
-            <div className='p-8 flex items-center flex-col '>
                 <strong className='flex self-start'>Meus Anúncios</strong>
+            <div className='p-8 flex items-center flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
                 {cards.map(card => myAds(card))}
             </div>
         </div>

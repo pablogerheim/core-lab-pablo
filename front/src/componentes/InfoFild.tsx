@@ -8,19 +8,14 @@ interface props {
 }
 
 function InfoFilds({ valueFild, nameFild, setFild }: props) {
-
-function handleInput(params:string|number) {
-    setFild(params)
-}
-
     return (
-        <label key={v4()} className="w-full">
+        <label className="w-full">
             <p className="pl-8">{upFirstLetter(nameFild)}:</p>
             <input
                 value={valueFild}
                 className="p-2 pl-8 font-medium w-full border rounded-3xl border-black"
                 placeholder={upFirstLetter(nameFild)}
-                onChange={(e) => handleInput(e.target.value)}
+                onChange={(e) => setFild(e.target.value)}
             />
         </label>
     )

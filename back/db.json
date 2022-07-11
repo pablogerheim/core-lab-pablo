@@ -1,49 +1,60 @@
 {
-  "nextId": 7,
+  "nextId": 18,
   "vehicles": [
     {
-      "id": 1,
-      "name": "wessss",
-      "description": "a",
-      "plate": "a",
+      "id": 13,
+      "name": "Carro 1 ",
+      "description": "Primeiro Carro",
+      "plate": "FTR-5555",
       "isFavorite": true,
-      "year": null,
-      "color": "marron",
-      "price": null,
-      "createdAt": "2022-07-11T00:49:15.376Z"
+      "year": 2018,
+      "color": "vermelho",
+      "price": 60500,
+      "createdAt": "2022-07-11T23:14:36.131Z"
     },
     {
-      "id": 3,
-      "name": "www",
-      "description": "wqeq",
-      "plate": "1232daw",
+      "id": 14,
+      "name": "Carro 2",
+      "description": "Segundo Carro",
+      "plate": "YTR-7777",
       "isFavorite": false,
-      "year": 2222,
+      "year": 2019,
       "color": "amarelo",
-      "price": 2233,
-      "createdAt": "2022-07-11T13:19:22.990Z"
+      "price": 75000,
+      "createdAt": "2022-07-11T23:15:22.385Z"
     },
     {
-      "id": 5,
-      "name": "www",
-      "description": "wqeq",
-      "plate": "1232daw",
+      "id": 15,
+      "name": "Carro 3",
+      "description": "Terceiro Carro",
+      "plate": "OIJ-9999",
       "isFavorite": false,
-      "year": 2222,
-      "color": "verde",
-      "price": 2233,
-      "createdAt": "2022-07-11T13:21:10.348Z"
+      "year": 2020,
+      "color": "rosa",
+      "price": 67800,
+      "createdAt": "2022-07-11T23:16:12.918Z"
     },
     {
-      "id": 6,
-      "name": "wp",
-      "description": "w",
-      "plate": "3",
+      "id": 16,
+      "name": "Carro 4",
+      "description": "Quarto Carro",
+      "plate": "HYT-2222",
       "isFavorite": true,
-      "year": 5,
-      "color": "rosa",
-      "price": 7,
-      "createdAt": "2022-07-11T13:21:44.869Z"
+      "year": 2021,
+      "color": "azul",
+      "price": 90500,
+      "createdAt": "2022-07-11T23:17:09.595Z"
+    },
+    {
+      "id": 17,
+      "name": "Carro 5",
+      "description": "Quinto Carro",
+      "plate": "YTR-7777",
+      "isFavorite": false,
+      "year": 2022,
+      "color": "verde",
+      "price": 87900,
+      "createdAt": "2022-07-11T23:17:54.849Z"
     }
   ]
 }

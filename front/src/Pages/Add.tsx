@@ -35,34 +35,32 @@ function Add({ id, setCards, setId }: Add): JSX.Element {
                     setYear(year.toString())
                     setPlate(plate)
                     setPrice(price.toString())
+
                 }
             })()
         }
-        console.log()
     }, [])
 
     async function handleSubmit(): Promise<void> {
         event?.preventDefault()
-        console.log(`Submit:  ${id}`)
         if (id === 0) { await api.post<IVehicle>("/", { name, color, description, year, plate, price }) }
         if (id !== 0) { await api.put<IVehicle>("/", { name, color, description, year, plate, price, id }) }
-        const dados = await api.get<IVehicle[]>("/")
-        if (setCards) { setCards(dados.data) }
+        if (setCards) { const dados = await api.get<IVehicle[]>("/"); setCards(dados.data) }
         navegate('/')
         if (setId) { setId(0) }
     }
 
     function select() {
-        return (<select className='p-2 pl-8  font-medium w-full border rounded-3xl border-black'
+        return (<select defaultValue={color? color : 'branco'} className='p-2 pl-8  font-medium w-full border rounded-3xl border-black'
             onChange={(e) => setColor(e.target.value)}
-            title={color}
+            title="select color"
         >
-            {Object.keys(COLORS).map(key => <option selected={color === key ? true : false} value={key} key={v4()}>{upFirstLetter(key)}</option>)}
+            {Object.keys(COLORS).map((key, i) => <option value={key} key={i}>{upFirstLetter(key)}</option>)}
         </select>)
     }
 
     return (
-        <div key={v4()} className="p-4 border " >
+        <div  className="p-4 border " >
             <a title='back' href='/'><AiOutlineArrowLeft className='h-6 w-8' /></a>
             <form onSubmit={handleSubmit} className="m-6 mt-4  bg-white">
                 <div className=" pt-[3rem] items-center p-4 ">
