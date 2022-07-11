@@ -1,5 +1,6 @@
 import { v4 } from "uuid";
 import { upFirstLetter } from "../Helper/HelperFunction";
+
 interface props {
     valueFild: string
     nameFild: string
@@ -7,6 +8,11 @@ interface props {
 }
 
 function InfoFilds({ valueFild, nameFild, setFild }: props) {
+
+function handleInput(params:string|number) {
+    setFild(params)
+}
+
     return (
         <label key={v4()} className="w-full">
             <p className="pl-8">{upFirstLetter(nameFild)}:</p>
@@ -14,7 +20,7 @@ function InfoFilds({ valueFild, nameFild, setFild }: props) {
                 value={valueFild}
                 className="p-2 pl-8 font-medium w-full border rounded-3xl border-black"
                 placeholder={upFirstLetter(nameFild)}
-                onChange={(e) => setFild(e.target.value)}
+                onChange={(e) => handleInput(e.target.value)}
             />
         </label>
     )

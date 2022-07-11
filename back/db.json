@@ -1,27 +1,49 @@
 {
-  "nextId": 3,
+  "nextId": 7,
   "vehicles": [
     {
       "id": 1,
       "name": "wessss",
       "description": "a",
       "plate": "a",
-      "isFavorite": false,
+      "isFavorite": true,
       "year": null,
       "color": "marron",
       "price": null,
       "createdAt": "2022-07-11T00:49:15.376Z"
     },
     {
-      "id": 2,
-      "name": "q",
-      "description": "w",
-      "plate": "d",
+      "id": 3,
+      "name": "www",
+      "description": "wqeq",
+      "plate": "1232daw",
       "isFavorite": false,
-      "year": null,
-      "color": "roxo",
-      "price": null,
-      "createdAt": "2022-07-11T00:51:57.809Z"
+      "year": 2222,
+      "color": "amarelo",
+      "price": 2233,
+      "createdAt": "2022-07-11T13:19:22.990Z"
+    },
+    {
+      "id": 5,
+      "name": "www",
+      "description": "wqeq",
+      "plate": "1232daw",
+      "isFavorite": false,
+      "year": 2222,
+      "color": "verde",
+      "price": 2233,
+      "createdAt": "2022-07-11T13:21:10.348Z"
+    },
+    {
+      "id": 6,
+      "name": "wp",
+      "description": "w",
+      "plate": "3",
+      "isFavorite": true,
+      "year": 5,
+      "color": "rosa",
+      "price": 7,
+      "createdAt": "2022-07-11T13:21:44.869Z"
     }
   ]
 }

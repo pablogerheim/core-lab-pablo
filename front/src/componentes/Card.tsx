@@ -7,27 +7,27 @@ import { v4 } from "uuid";
 
 interface prop {
     card: IVehicle
-    onChangeCards: Function | null
+    setCards: Function | null
 }
 
 function Card({
     card,
-    onChangeCards
+    setCards
 }: prop) {
 
     const [id, setId] = useState<number>(0)
 
     async function getData() {
         const dados = await api.get<IVehicle[]>("/")
-        if (dados.data && onChangeCards !== null) {
-            onChangeCards(dados.data)
+        if (dados.data && setCards !== null) {
+            setCards(dados.data)
         }
     }
 
-    async function handleUpdate(id: number) {
-        console.log(`handle:  ${id}`)
-        setId(id)
+    async function handleUpdate(upId: number) {
+        setId(upId)
     }
+
     async function handleDelet(id: number) {
         await api.delete<IVehicle>(`/${id}`,)
         getData()
@@ -38,7 +38,7 @@ function Card({
         getData()
     }
 
-    if (id !== 0) { return <Add id={id} setId={setId} onChangeCards={onChangeCards} /> }
+    if (id !== 0) { return <Add id={id} setId={setId} setCards={setCards} /> }
     else {
 
         return (

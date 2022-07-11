@@ -31,16 +31,16 @@ function Home({ cards, setCards }: props) {
         found.forEach(card => { if (card) { result.push(card) } })
         setCards(result)
     }
-    
+
     function favorite(card: IVehicle) {
         if (card.isFavorite) {
-            return (<Card card={card} onChangeCards={setCards} />)
+            return (<Card card={card} setCards={setCards} />)
         }
     }
 
     function myAds(card: IVehicle) {
         if (!card.isFavorite) {
-            return (<Card card={card} onChangeCards={setCards} />)
+            return (<Card card={card} setCards={setCards} />)
         }
     }
 

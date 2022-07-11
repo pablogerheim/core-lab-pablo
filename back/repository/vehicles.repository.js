@@ -66,16 +66,19 @@ async function updateVehicle({ name, description, plate, year, color, price, id 
     price = parseInt(price)
     id = parseInt(id)
     let data = await readFileFunction()
-    let exists = data.vehicles.find(vehicle => vehicle.id === id)
-    if (exists === undefined) { throw new Error("pedido Não encontrado") }
+    let findVehivle = data.vehicles.find(vehicle => vehicle.id === id)
+    if (findVehivle === undefined) { throw new Error("pedido Não encontrado") }
 
     let vehicle = {
+        "id": findVehivle.id,
         "name": name,
         "description": description,
         "plate": plate,
+        "isFavorite": findVehivle.isFavorite,
         "year": year,
         "color": color,
         "price": price,
+        "createdAt": findVehivle.createdAt
     }
 
     data.vehicles.map((element, i) => {

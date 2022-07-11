@@ -26,7 +26,7 @@ function App(): JSX.Element {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home cards={cards} setCards={setCards}/>} />
-                <Route path="create" element={<Add id={0} setId={null} onChangeCards={null} />} />
+                <Route path="create" element={<Add id={0} setId={null} setCards={setCards} />} />
                 <Route path="filter" element={<Filter cards={cards} setCards={setCards} />} />
                 <Route path="/*"element={<Navigate to={'/'} />} />
             </Routes>

@@ -9,11 +9,11 @@ import InfoFilds from '../componentes/InfoFild';
 
 interface Add {
     id: number
-    onChangeCards: Function | null
+    setCards: Function | null
     setId: Function | null
 }
 
-function Add({ id, onChangeCards, setId }: Add): JSX.Element {
+function Add({ id, setCards, setId }: Add): JSX.Element {
     const navegate = useNavigate()
 
     const [name, setName] = useState<string>('')
@@ -38,16 +38,17 @@ function Add({ id, onChangeCards, setId }: Add): JSX.Element {
                 }
             })()
         }
+        console.log()
     }, [])
 
     async function handleSubmit(): Promise<void> {
         event?.preventDefault()
         console.log(`Submit:  ${id}`)
         if (id === 0) { await api.post<IVehicle>("/", { name, color, description, year, plate, price }) }
-        if (id!== 0) { await api.put<IVehicle>("/", { name, color, description, year, plate, price, id }) }
+        if (id !== 0) { await api.put<IVehicle>("/", { name, color, description, year, plate, price, id }) }
         const dados = await api.get<IVehicle[]>("/")
-        if (onChangeCards) { onChangeCards(dados.data) }
-        else { navegate('/') }
+        if (setCards) { setCards(dados.data) }
+        navegate('/')
         if (setId) { setId(0) }
     }
 
