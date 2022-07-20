@@ -44,7 +44,7 @@ app.use((err, req, res, next) => {
     res.status(400).send({ error: err.message })
 })
 
-app.listen(3001, async() => {
+app.listen(3002, async() => {
     try {
         await readFile('db.json');
         logger.info("API Started!");

@@ -2,18 +2,17 @@ import { AiOutlineArrowLeft } from 'react-icons/ai';
 import { api, upFirstLetter } from "../Helper/HelperFunction";
 import { COLORS } from "../Helper/HelperContents";
 import { useEffect, useState } from 'react';
-import { v4 } from 'uuid'
 import { IVehicle } from '../../Types/Vehicle';
 import { useNavigate } from 'react-router-dom';
 import InfoFilds from '../componentes/InfoFild';
 
-interface Add {
+interface IAdd {
     id: number
     setCards: Function | null
     setId: Function | null
 }
 
-function Add({ id, setCards, setId }: Add): JSX.Element {
+function Add({ id, setCards, setId }: IAdd): JSX.Element {
     const navegate = useNavigate()
 
     const [name, setName] = useState<string>('')
@@ -39,9 +38,10 @@ function Add({ id, setCards, setId }: Add): JSX.Element {
                 }
             })()
         }
-    }, [])
+    },[id])
 
     async function handleSubmit(): Promise<void> {
+        // eslint-disable-next-line no-restricted-globals
         event?.preventDefault()
         if (id === 0) { await api.post<IVehicle>("/", { name, color, description, year, plate, price }) }
         if (id !== 0) { await api.put<IVehicle>("/", { name, color, description, year, plate, price, id }) }
