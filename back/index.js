@@ -4,10 +4,9 @@ import vehiclesRoute from "./routes/vehicles.routes.js"
 import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 import { swaggerDocument } from "./doc.js"
-import { promises as fs } from "fs"
+import { promises } from "fs"
 
-const { readFile, writeFile } = fs
-
+const { readFile, writeFile } = promises
 const { combine, timestamp, label, printf } = winston.format;
 const myFormat = printf(({ level, message, label, timestamp }) => {
     return `${timestamp} [${label}] ${level}: ${message}`;

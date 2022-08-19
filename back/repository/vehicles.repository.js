@@ -35,7 +35,7 @@ async function deleteVehicle(id) {
     let data = await readFileFunction()
     data.vehicles = data.vehicles.filter(vehicle => vehicle.id !== id)
     return await writeFileFunction(data)
-}
+};
 
 async function createVehicle({ name, description, plate, year, color, price }) {
     year = parseInt(year)

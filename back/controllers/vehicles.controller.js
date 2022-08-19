@@ -3,7 +3,6 @@ import vehiclesService from "../service/vehicles.service.js";
 async function getVehicles(req, res, next) {
     try {
         const data = await vehiclesService.getVehicles(req.params.id)
-        console.log(data)
         res.status(200).send(data);
         logger.info(`GET /Vehicles - All vehicles`);
     } catch (err) {
@@ -34,7 +33,6 @@ async function deleteVehicle(req, res, next) {
 }
 
 async function createVehicle(req, res, next) {
-    console.log(req.body)
     try {
         const { name, description, plate, year, color, price } = req.body;
         if (!name == null || description == null || plate == null || year == null || color == null || price == null) {
