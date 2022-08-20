@@ -46,15 +46,11 @@ Após o subir o projeto acessar http://localhost:3002/doc/
 Front
 * [React](https://pt-br.reactjs.org/) - Framework 
 * [Tailwind](https://tailwindcss.com/) - Estilização
-* [Chakra UI](https://chakra-ui.com/) - Estilização
 * [Axios](https://axios-http.com/ptbr/docs/intro) - API
 
 Back
 * [Node](https://nodejs.org/en/) - Framework 
 * [Express](http://expressjs.com/pt-br/) - Framework 
-* [Sequelize](https://sequelize.org/) - ORM 
-* [ElephantSQL](https://www.elephantsql.com/) - Data Base 
-* [MongoDB](https://www.mongodb.com/) - Data Base 
 * [Swagger](https://swagger.io/) - Documentação
 
 Geral

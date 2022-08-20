@@ -6,12 +6,10 @@ export const swaggerDocument = {
         title: 'My Bank API description',
     },
     host: 'localhost:3000',
-    tags: [
-        {
-            name: 'account',
-            description: 'Account management',
-        },
-    ],
+    tags: [{
+        name: 'account',
+        description: 'Account management',
+    }, ],
     paths: {
         '/account': {
             get: {
@@ -37,20 +35,16 @@ export const swaggerDocument = {
             post: {
                 tags: ['account'],
                 summary: 'Create a new account',
-                description:
-                    'Create a new account with the received parameters',
+                description: 'Create a new account with the received parameters',
                 consumes: ['application/json'],
-                parameters: [
-                    {
-                        in: 'body',
-                        name: 'body',
-                        description: 'Account object',
-                        required: true,
-                        schema: {
-                            $ref: '#/definitions/Account',
-                        },
+                parameters: [{ in: 'body',
+                    name: 'body',
+                    description: 'Account object',
+                    required: true,
+                    schema: {
+                        $ref: '#/definitions/Account',
                     },
-                ],
+                }, ],
                 responses: {
                     200: {
                         description: 'Account created',
