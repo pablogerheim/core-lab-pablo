@@ -1,4 +1,4 @@
-# Work Shop
+# Core Lab
 
 Função:
 - Apresentar produtos comercias
