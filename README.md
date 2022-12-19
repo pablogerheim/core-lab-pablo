@@ -5,6 +5,10 @@ Função:
 - CRUD completo para interagir com os produtos oferecidos, podendo deixá-los favoritados
 - Também oferece campo de busca e filtros para encontrar produtos de uma forma mais fácil e pratica
 
+Imagen Ilustrativa 
+
+![Ilustrando](https://user-images.githubusercontent.com/90703690/208497224-706c99c5-d0f7-40b0-bd51-eff8e09f55c2.png)
+
 ## 🚧 Em Desenvolvimento
 
 Testes
