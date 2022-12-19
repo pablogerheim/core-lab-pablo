@@ -51,6 +51,7 @@ Front
 * [React](https://pt-br.reactjs.org/) - Framework 
 * [Tailwind](https://tailwindcss.com/) - Estilização
 * [Axios](https://axios-http.com/ptbr/docs/intro) - API
+* [Vite](https://vitejs.dev/) - Frontend Tooling
 
 Back
 * [Node](https://nodejs.org/en/) - Framework 
