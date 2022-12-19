@@ -1,5 +1,5 @@
 {
-  "nextId": 19,
+  "nextId": 20,
   "vehicles": [
     {
       "id": 13,
@@ -66,6 +66,17 @@
       "color": "cinza",
       "price": 99003,
       "createdAt": "2022-07-20T12:25:32.707Z"
+    },
+    {
+      "id": 19,
+      "name": "Carro 8",
+      "description": "honda cit",
+      "plate": "GTY - 8774",
+      "isFavorite": false,
+      "year": 2014,
+      "color": "roxo",
+      "price": 85000,
+      "createdAt": "2022-12-19T18:32:33.248Z"
     }
   ]
 }

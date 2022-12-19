@@ -66,8 +66,8 @@ function Home({cards, setCards}: props) {
 					/>
 				</div>
 				<a href='/filter'>
-					<button type='button' className='h-12 w-12 '>
-						<img src={imagen} alt={'tools'} />
+					<button type='button' className='h-12 w-20 ml-4 border-none '>
+						<img className='bttt' src={imagen} alt={'tools'} />
 					</button>
 				</a>
 			</div>

@@ -43,7 +43,6 @@ function Add({id, setCards, setId}: IAdd): JSX.Element {
 	}, [id]);
 
 	async function handleSubmit(): Promise<void> {
-		// eslint-disable-next-line no-restricted-globals
 		event?.preventDefault();
 		if (id === 0) {
 			await api.post<IVehicle>('/', {name, color, description, year, plate, price});

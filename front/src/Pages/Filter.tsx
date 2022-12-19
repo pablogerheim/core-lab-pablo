@@ -51,7 +51,7 @@ function Filter({cards, setCards}: props) {
 	}
 
 	return (
-		<div className='p-4 bg-slate-200 h-screen' >
+		<div className='p-4  h-screen' >
 			<a title='back' href='/'><AiOutlineArrowLeft className='h-6 w-8' /></a>
 			<form onSubmit={handleFilters} className='m-6 mt-4  bg-white'>
 				<div className=' pt-[3rem] items-center p-4 '>
